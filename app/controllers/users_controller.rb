@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome #{@user.username}"
+      flash[:success] = "Welcome to the Blog, #{@user.username}"
       redirect_to articles_path
     else
       render 'new'
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user_articles = @user.articles.paginate(page: params[:page], per_page: 1)
+    @user_articles = @user.articles.paginate(page: params[:page], per_page: 10)
   end
   
   private
