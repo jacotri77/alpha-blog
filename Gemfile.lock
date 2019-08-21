@@ -136,7 +136,7 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
-    scout_apm (2.4.24)
+    scout_apm (2.5.2)
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -192,4 +192,4 @@ DEPENDENCIES
   will_paginate (>= 3.0.7)
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
