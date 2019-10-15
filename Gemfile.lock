@@ -162,7 +162,7 @@ GEM
       activemodel (>= 4.2)
       debug_inspector
       railties (>= 4.2)
-    will_paginate (3.1.7)
+    will_paginate (3.2.1)
 
 PLATFORMS
   ruby
