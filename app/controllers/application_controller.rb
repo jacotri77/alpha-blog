@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   helper_method :current_user, :logged_in?
+
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -19,6 +20,15 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
     
+  end
+  
+  before_action :set_raven_context
+
+  private
+
+  def set_raven_context
+    Raven.user_context(id: session[:current_user_id]) # or anything else in session
+    Raven.extra_context(params: params.to_unsafe_h, url: request.url)
   end
   
 end
