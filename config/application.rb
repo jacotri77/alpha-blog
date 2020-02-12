@@ -6,13 +6,15 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Raven.configure do |config|
+  config.dsn = 'https://da560686c00f4fa2bee1f1dbe4d24224:92545fab3a0b4eecbd263285e55165cc@sentry.io/2472960'
+  config.excluded_exceptions = []
+  config.attr = 'value'
+end
+
 module AlphaBlog
   class Application < Rails::Application
-    Raven.configure do |config|
-      config.dsn = 'https://da560686c00f4fa2bee1f1dbe4d24224:92545fab3a0b4eecbd263285e55165cc@sentry.io/2472960'
-      config.excluded_exceptions = []
-      config.attr = 'value'
-    end
+
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
