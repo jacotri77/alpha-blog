@@ -2,9 +2,10 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  
-  helper_method :current_user, :logged_in?
   before_action :set_raven_context
+
+  helper_method :current_user, :logged_in?
+  
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -19,12 +20,9 @@ class ApplicationController < ActionController::Base
       flash[:danger] = "You must be logged into to perform that action"
       redirect_to root_path
     end
-    
   end
   
-  
-
-  private
+private
 
   def set_raven_context
     Raven.user_context(id: session[:user_id]) # or anything else in session
