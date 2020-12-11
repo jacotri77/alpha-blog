@@ -145,7 +145,7 @@ GEM
       tilt
     scout_apm (2.6.9)
       parser
-    sdoc (1.1.0)
+    sdoc (2.0.3)
       rdoc (>= 5.0)
     sentry-raven (3.1.1)
       faraday (>= 1.0)
@@ -193,7 +193,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 6.0)
   scout_apm
-  sdoc (~> 1.1.0)
+  sdoc (~> 2.0.3)
   sentry-raven
   spring
   sqlite3 (= 1.4.2)
