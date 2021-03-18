@@ -7,8 +7,9 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: 5
-  timeout: 5000
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
@@ -22,6 +23,4 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  url: <%= ENV['DATABASE_URL'] %>
