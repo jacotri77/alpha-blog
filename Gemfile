@@ -35,7 +35,7 @@ gem "sentry-raven"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'pg'
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
