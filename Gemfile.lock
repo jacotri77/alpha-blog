@@ -89,7 +89,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.2)
@@ -134,7 +136,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
     rake (13.0.1)
-    rdoc (6.2.1)
+    rdoc (6.3.1)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.0.1)
@@ -148,7 +150,7 @@ GEM
       tilt
     scout_apm (2.6.9)
       parser
-    sdoc (1.1.0)
+    sdoc (2.2.0)
       rdoc (>= 5.0)
     sentry-raven (3.1.1)
       faraday (>= 1.0)
@@ -197,7 +199,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 6.0)
   scout_apm
-  sdoc (~> 1.1.0)
+  sdoc (~> 2.2.0)
   sentry-raven
   spring
   sqlite3 (= 1.4.2)
